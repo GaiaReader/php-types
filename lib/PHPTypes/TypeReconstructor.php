@@ -143,7 +143,8 @@ class TypeReconstructor {
 			case 'Expr_BinaryOp_Plus':
 			case 'Expr_BinaryOp_Minus':
 			case 'Expr_BinaryOp_Mul':
-				if ($resolved->contains($op->left) && $resolved->contains($op->right)) {
+            case 'Expr_BinaryOp_Pow':
+            if ($resolved->contains($op->left) && $resolved->contains($op->right)) {
 					switch ([$resolved[$op->left]->type, $resolved[$op->right]->type]) {
 						case [Type::TYPE_LONG, Type::TYPE_LONG]:
 							return [Type::int()];
