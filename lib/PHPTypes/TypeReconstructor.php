@@ -212,6 +212,22 @@ class TypeReconstructor {
 			case 'Expr_Include':
 				// TODO: we may be able to determine these...
 				return false;
+            case 'Expr_BinaryOp_Coalesce':
+                if($resolved->contains($op->left)&&$resolved->contains($op->right)){
+                    if($resolved[$op->left]->type == $resolved[$op->right]->type){
+                        return [$resolved[$op->left]];
+                    }
+                    else{
+                        return [$resolved[$op->left], $resolved[$op->right]];
+                    }
+                }
+                elseif($resolved->contains($op->left)){
+                    return [$resolved[$op->left]];
+                }
+                elseif ($resolved->contains($op->right)){
+                    return [$resolved[$op->right]];
+                }
+                return false;
 		}
 		throw new \LogicException("Unknown variable op found: " . $op->getType());
 	}
