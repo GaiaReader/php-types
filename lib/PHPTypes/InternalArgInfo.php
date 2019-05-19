@@ -8012,6 +8012,7 @@ class InternalArgInfo {
         'transliterator_transliterate'                              => ['', 'subject'=>'string', 'start='=>'string', 'end='=>'string'],
         'Transliterator::transliterate'                             => ['', 'subject'=>'string', 'start='=>'string', 'end='=>'string'],
         'trigger_error'                                             => ['', 'message'=>'string', 'error_type='=>'int'],
+        'user_error'                                             => ['', 'message'=>'string', 'error_type='=>'int'],
         'trim'                                                      => ['string', 'str'=>'string', 'character_mask='=>'string'],
         'TypeError::__clone'                                        => ['TypeError'],
         'TypeError::__construct'                                    => ['TypeError', 'message='=>'string', 'code='=>'int', 'previous='=>'Throwable|TypeError'],
