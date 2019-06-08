@@ -9,6 +9,7 @@
 
 namespace PHPTypes;
 
+// 内部函数参数信息
 class InternalArgInfo {
     /**
      * @var string[][]
